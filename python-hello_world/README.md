@@ -67,7 +67,7 @@ Bienvenue dans le projet **Python - Hello World** ! Ce projet est une introducti
 
 ## Auteurs
 
-- **Kevin De Castro** : Créateur du projet.
+- **Kevin De Castro** : Étudiant à la Holberton School.
 
 ## License
 
