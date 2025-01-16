@@ -88,6 +88,7 @@ Pour exécuter les programmes :
 ```bash
 chmod +x <fichier.py>  # Rendre le fichier exécutable
 ./<fichier.py>          # Exécuter le fichier
+```
 
 ## Auteurs
 
