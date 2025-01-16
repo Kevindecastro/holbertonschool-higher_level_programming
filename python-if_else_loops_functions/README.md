@@ -2,7 +2,7 @@
 
 ## Description
 
-Bienvenue dans le projet **Python - Hello World** ! Ce projet contient une série d'exercices visant à pratiquer l'utilisation des structures de contrôle (if/else), des boucles et des fonctions en Python. L'objectif est d'améliorer tes compétences en logique de programmation de base avec Python.
+Bienvenue dans le projet **Python - if/else, loops, functions** ! Ce projet contient une série d'exercices visant à pratiquer l'utilisation des structures de contrôle (if/else), des boucles et des fonctions en Python. L'objectif est d'améliorer tes compétences en logique de programmation de base avec Python.
 
 ### Objectifs d'apprentissage
 
