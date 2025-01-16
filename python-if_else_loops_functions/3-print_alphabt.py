@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 
-print("".join("{}".format(chr(c)) for c in range(97, 123) if c not in (101, 113)), end="")
+for letter in range(97, 123):
+    if chr(letter) != 'e' and chr(letter) != 'q':
+        print("{}".format(chr(letter)), end="")
