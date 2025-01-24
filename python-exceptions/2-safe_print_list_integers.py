@@ -1,22 +1,19 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     """
-    Imprime les entiers dans la liste jusqu'à x éléments.
-
-    Args:
-        my_list (list): Liste à parcourir.
-        x (int): Nombre d'éléments à vérifier.
-
-    Returns:
-        int: Nombre d'entiers imprimés.
+    Affiche les x premiers éléments de my_list qui sont des entiers.
     """
     count = 0
-    try:
-        for i in range(x):  # Parcours jusqu'à x éléments
-            if isinstance(my_list[i], int):  # Vérifie si c'est un entier
-                print("{:d}".format(my_list[i]), end="")  # Affiche l'entier
-                count += 1
-    except IndexError:
-        pass  # Ignore si x dépasse la longueur de la liste
-    print()  # Ajoute un saut de ligne après l'impression
+    for i in range(x):
+        try:
+            # Tente d'afficher l'élément comme un entier
+            print("{:d}".format(my_list[i]), end="")
+            count += 1
+        except (ValueError, TypeError):
+            # Ignore les éléments qui ne sont pas des entiers
+            continue
+        except IndexError:
+            # Arrête si l'index est hors limites
+            break
+    print()  # Affiche une nouvelle ligne à la fin
     return count
