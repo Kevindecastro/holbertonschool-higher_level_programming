@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def best_score(a_dictionary):
     # Vérifier si le dictionnaire est vide
     if not a_dictionary:  # Si le dictionnaire est vide, retourner None

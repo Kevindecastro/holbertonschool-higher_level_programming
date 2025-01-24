@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def search_replace(my_list, search, replace):
     # Utilisation d'une compréhension de liste pour parcourir chaque élément
     # de la liste

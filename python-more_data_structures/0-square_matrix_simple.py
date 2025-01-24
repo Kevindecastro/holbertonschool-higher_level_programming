@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
     # Utilisation d'une compréhension de liste pour parcourir chaque ligne
     # (row) de la matrice

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def roman_to_int(roman_string):
     """Convertit une chaîne de chiffres romains en un entier."""
     # Vérifier si l'entrée est une chaîne de caractères non vide

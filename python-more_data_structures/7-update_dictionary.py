@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
     # Ajouter ou mettre à jour la paire clé-valeur dans le dictionnaire
 

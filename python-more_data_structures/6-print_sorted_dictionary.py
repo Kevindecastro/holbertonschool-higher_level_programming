@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def print_sorted_dictionary(a_dictionary):
     # Parcourir les clés du dictionnaire dans l'ordre trié
     for key in sorted(a_dictionary):  # sorted() retourne une liste des clés

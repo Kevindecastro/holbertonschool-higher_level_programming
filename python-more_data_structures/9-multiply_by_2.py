@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def multiply_by_2(a_dictionary):
     # Utiliser une compréhension de dictionnaire pour multiplier chaque
     # valeur par 2

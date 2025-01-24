@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
     # Vérifier si la clé existe dans le dictionnaire
     if key in a_dictionary:  # Si la clé est présente dans le dictionnaire
