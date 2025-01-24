@@ -1,4 +1,3 @@
-```markdown
 # Python - Exceptions
 
 Ce projet vise à introduire et à manipuler les exceptions en Python, en utilisant des techniques telles que le `try`, `except`, `finally`, et en abordant des cas spécifiques comme les erreurs de type, les divisions par zéro, etc.
