@@ -11,9 +11,6 @@ def safe_print_list_integers(my_list=[], x=0):
             count += 1
         except (ValueError, TypeError):
             # Ignore les éléments qui ne sont pas des entiers
-            continue
-        except IndexError:
-            # Arrête si l'index est hors limites
-            break
-    print()  # Affiche une nouvelle ligne à la fin
+            pass
+    print("")  # Affiche une nouvelle ligne à la fin
     return count
