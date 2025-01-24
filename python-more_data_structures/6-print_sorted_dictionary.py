@@ -1,0 +1,7 @@
+def print_sorted_dictionary(a_dictionary):
+    # Parcourir les clés du dictionnaire dans l'ordre trié
+    for key in sorted(a_dictionary):  # sorted() retourne une liste des clés
+        # triées par ordre croissant
+        # Imprimer la clé et sa valeur correspondante dans le dictionnaire
+        print(f"{key}: {a_dictionary[key]}")  # Affiche la clé et sa valeur
+        # formatée
