@@ -27,10 +27,9 @@ def text_indentation(text):
             print()  # Imprimer une nouvelle ligne après
             print()  # Imprimer une deuxième nouvelle ligne
             i += 1  # Passer au caractère suivant
-        elif (text[i] == ' ' and i + 1 < len(text) and
-              text[i + 1] in ['.', '?', ':']):
-            # Eviter les espaces avant les caractères spéciaux
-            i += 1
+            # Sauter les espaces qui suivent la ponctuation
+            while i < len(text) and text[i] == ' ':
+                i += 1
         else:
             # Imprimer les caractères jusqu'à trouver un caractère spécial
             print(text[i], end="")
