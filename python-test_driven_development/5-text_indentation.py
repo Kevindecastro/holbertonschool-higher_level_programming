@@ -32,6 +32,7 @@ def text_indentation(text):
         if text[i] in ['.', '?', ':']:
             print(text[i], end="")  # Afficher le caractère spécial sans espace
             print()  # Imprimer une nouvelle ligne après
+            print()  # Imprimer une deuxième nouvelle ligne
             i += 1  # Passer au caractère suivant
             # Sauter les espaces qui suivent la ponctuation
             while i < len(text) and text[i] == ' ':
