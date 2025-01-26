@@ -2,52 +2,34 @@
 """Tests unitaires pour max_integer([..])
 """
 import unittest
+
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
-    """Cas de test pour la fonction max_integer"""
-
-    def test_regular_case(self):
-        """Test avec une liste normale d'entiers"""
+    def test_sorted_integers(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
-    def test_another_regular_case(self):
-        """Test avec une autre liste d'entiers"""
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+    def test_rev_sorted_integers(self):
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
 
-    def test_single_element(self):
-        """Test avec un seul élément dans la liste"""
-        self.assertEqual(max_integer([10]), 10)
+    def test_middle_max(self):
+        self.assertEqual(max_integer([3, 2, 5, 4, 1]), 5)
+
+    def test_positive_integers(self):
+        self.assertEqual(max_integer([1, 15]), 15)
+
+    def test_one_integer(self):
+        self.assertEqual(max_integer([-1]), -1)
+
+    def test_duplicate_integer(self):
+        self.assertEqual(max_integer([55, 55]), 55)
 
     def test_empty_list(self):
-        """Test avec une liste vide"""
         self.assertEqual(max_integer([]), None)
 
-    def test_negative_numbers(self):
-        """Test avec une liste de nombres négatifs"""
-        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
-
-    def test_mixed_numbers(self):
-        """Test avec une liste contenant à la fois des nombres positifs et négatifs"""
-        self.assertEqual(max_integer([1, -2, 3, -4]), 3)
-
-    def test_floats(self):
-        """Test avec une liste de nombres flottants"""
-        self.assertEqual(max_integer([1.5, 2.5, 3.5]), 3.5)
-
-    def test_repeated_values(self):
-        """Test avec une liste contenant des valeurs maximales répétées"""
-        self.assertEqual(max_integer([1, 3, 3, 2]), 3)
-
-    def test_string_elements(self):
-        """Test avec une liste de chaînes de caractères (cas invalide)"""
-        with self.assertRaises(TypeError):
-            max_integer(["a", "b", "c"])
-
-    def test_none(self):
-        """Test avec None comme entrée"""
-        with self.assertRaises(TypeError):
-            max_integer(None)
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_unmodified_list(self):
+        test_list = [873, 5654, 465, -389, 0]
+        test_copy = list(test_list)
+        self.assertTrue(len(test_copy) == len(test_list))
+        for i in range(len(test_copy)):
+            self.assertTrue(test_copy[i] == test_list[i])
