@@ -172,7 +172,7 @@ python3 -m unittest tests.6-max_integer_test
 
 ## Auteurs
 
-Kevin De Castro : Étudiant à la Holberton School
+`Kevin De Castro` : Étudiant à la Holberton School
 
 ## License
 
