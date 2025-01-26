@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Imprime le nom complet sous la forme "My name is <first_name> <last_name>"
+Module 3-say_my_name
+Définit une fonction `say_my_name` qui imprime un nom complet.
 """
 
 
@@ -8,14 +9,14 @@ def say_my_name(first_name, last_name=""):
     """
     Imprime "My name is <first_name> <last_name>".
 
-    Args:
+    Arguments :
         first_name (str): Le prénom à afficher.
-        last_name (str): Le nom de famille à afficher
-                         (vide par défaut).
+        last_name (str): Le nom de famille à afficher 
+                         (par défaut est vide).
 
-    Raises:
-        TypeError: Si first_name ou last_name ne sont pas des chaînes
-                   de caractères.
+    Exceptions :
+        TypeError: Si first_name ou last_name 
+        n'est pas une chaîne de caractères.
     """
 
     if not isinstance(first_name, str):
