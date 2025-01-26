@@ -4,7 +4,6 @@ Imprime un texte avec deux nouvelles lignes après chaque occurrence de
 '.', '?', et ':'.
 """
 
-
 def text_indentation(text):
     """
     Imprime le texte avec deux nouvelles lignes après chaque '.', '?', ou ':'.
