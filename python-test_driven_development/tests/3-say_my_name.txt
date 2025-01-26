@@ -10,7 +10,7 @@ My name is Walter White
 My name is Bob
 
 >>> say_my_name("", "kevin")
-My name is  Dkevin
+My name is  kevin
 
 >>> say_my_name("Vador", "")
 My name is Vador 
