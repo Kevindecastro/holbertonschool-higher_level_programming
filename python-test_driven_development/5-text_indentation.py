@@ -18,6 +18,13 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
+    # Enlever les espaces en début et fin de texte
+    text = text.strip()
+
+    # Vérification si le texte est vide après suppression des espaces
+    if not text:
+        return
+
     # Parcourir chaque caractère du texte
     i = 0
     while i < len(text):
@@ -30,6 +37,10 @@ def text_indentation(text):
             # Sauter les espaces qui suivent la ponctuation
             while i < len(text) and text[i] == ' ':
                 i += 1
+        elif text[i] == ' ' and (i == 0 or text[i-1] in ['.', '?', ':']):
+            # Ne pas imprimer les espaces qui suivent immédiatement
+            # un caractère de ponctuation
+            i += 1
         else:
             # Imprimer les caractères jusqu'à trouver un caractère spécial
             print(text[i], end="")
