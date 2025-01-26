@@ -23,8 +23,9 @@ def text_indentation(text):
     while i < len(text):
         # Imprimer jusqu'au prochain caractère spécial
         if text[i] in ['.', '?', ':']:
-            print(text[i].strip())  # Afficher le caractère spécial sans espace
+            print(text[i], end="")  # Afficher le caractère spécial sans espace
             print()  # Imprimer une nouvelle ligne après
+            print()  # Imprimer une deuxième nouvelle ligne
             i += 1  # Passer au caractère suivant
         elif (text[i] == ' ' and i + 1 < len(text) and
               text[i + 1] in ['.', '?', ':']):
