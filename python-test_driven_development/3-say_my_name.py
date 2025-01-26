@@ -17,10 +17,8 @@ def say_my_name(first_name, last_name=""):
         TypeError: Si first_name ou last_name ne sont pas des chaînes
                    de caractères.
     """
-    if not isinstance(first_name, str):
+    if not type(first_name) is str:
         raise TypeError("first_name must be a string")
-    if not isinstance(last_name, str):
+    if not type(last_name) is str:
         raise TypeError("last_name must be a string")
-
-# Ajouter un espace même si last_name est vide
-    print(f"My name is {first_name} {last_name}".strip())
+    print("My name is {} {}".format(first_name, last_name))
