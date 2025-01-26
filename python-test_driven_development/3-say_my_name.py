@@ -22,8 +22,5 @@ def say_my_name(first_name, last_name=""):
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
 
-# Condition pour ne pas imprimer un espace supplémentaire si last_name est vide
-    if last_name:
-        print(f"My name is {first_name} {last_name}")
-    else:
-        print(f"My name is {first_name}")
+# Ajouter un espace même si last_name est vide
+    print(f"My name is {first_name} {last_name}".strip())
