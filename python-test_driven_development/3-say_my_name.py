@@ -21,4 +21,9 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     if not type(last_name) is str:
         raise TypeError("last_name must be a string")
-    print("My name is {} {}".format(first_name, last_name))
+# Si last_name est vide, ne pas ajouter d'espace supplémentaire
+    if last_name:
+        print(f"My name is {first_name} {last_name}")
+    else:
+        print(f"My name is {first_name}")
+        
