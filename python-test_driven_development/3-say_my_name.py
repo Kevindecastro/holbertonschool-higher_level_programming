@@ -10,8 +10,8 @@ def say_my_name(first_name, last_name=""):
 
     Args:
         first_name (str): Le prénom à afficher.
-        last_name (str, optionnel): Le nom de famille à afficher
-                                    (vide par défaut).
+        last_name (str): Le nom de famille à afficher
+                         (vide par défaut).
 
     Raises:
         TypeError: Si first_name ou last_name ne sont pas des chaînes
