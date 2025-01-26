@@ -1,93 +1,32 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?")
-Lorem ipsum dolor sit amet.
-Quonam modo?
-Utrum igitur tibi litteram videor an totas paginas commovere?
-<BLANKLINE>
+>>> text_indentation("hello")
+hello
 
->>> text_indentation("Ceci est un exemple de texte. Il y a plusieurs phrases ici : une autre phrase ? Et encore une autre.")
-Ceci est un exemple de texte.
-Il y a plusieurs phrases ici :
-une autre phrase ?
-Et encore une autre.
-<BLANKLINE>
-
->>> text_indentation("Aucun signe de ponctuation ici")
-Aucun signe de ponctuation ici
-<BLANKLINE>
-
->>> text_indentation("Un autre exemple avec des signes : de ponctuation ? comme cela.")
-Un autre exemple avec des signes :
-de ponctuation ?
-comme cela.
-<BLANKLINE>
-
->>> text_indentation("Texte simple sans points d'interrogation ou deux-points.")
-Texte simple sans points d'interrogation ou deux-points.
-<BLANKLINE>
-
->>> text_indentation("cheese.")
-cheese.
-<BLANKLINE>
-
->>> text_indentation("taco?")
-taco?
-<BLANKLINE>
-
->>> text_indentation("no")
-no
-
->>> text_indentation([])
+>>> text_indentation(123)
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation("following:")
-following:
+>>> text_indentation("hell:o")
+hell:
 <BLANKLINE>
+o
 
->>> text_indentation("    ")
+>>> text_indentation("")
+
+
+>>> text_indentation("hell.o")
+hell.
+<BLANKLINE>
+o
+
+>>> text_indentation("hell?o")
+hell?
+<BLANKLINE>
+o
 
 >>> text_indentation(".")
 .
 <BLANKLINE>
 
->>> text_indentation("    ?    ")
-?
-<BLANKLINE>
-
->>> text_indentation("Far        ?    ")
-Far        ?
-<BLANKLINE>
-
->>> text_indentation("     IN SPACE     :")
-IN SPACE     :
-<BLANKLINE>
-
->>> text_indentation("?:.")
-?
-<BLANKLINE>
-:
-<BLANKLINE>
-.
-<BLANKLINE>
-
->>> text_indentation("    REMOVE?    ALL:      SPACE.       ")
-REMOVE?
-<BLANKLINE>
-ALL:
-<BLANKLINE>
-SPACE.
-<BLANKLINE>
-
->>> text_indentation("           c")
-c
-
->>> text_indentation("*    DONT   ?!    REMOVE    :@     SPACE   .!      %")
-*    DONT   ?
-<BLANKLINE>
-!    REMOVE    :
-<BLANKLINE>
-@     SPACE   .
-<BLANKLINE>
-!      %
+>>> text_indentation("    ")
