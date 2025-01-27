@@ -11,11 +11,13 @@ def say_my_name(first_name, last_name=""):
 
     Arguments :
         first_name (str): Le prénom à afficher.
-        last_name (str): Le nom de famille à afficher 
+
+        last_name (str): Le nom de famille à afficher
                          (par défaut est vide).
 
     Exceptions :
-        TypeError: Si first_name ou last_name 
+        TypeError: Si first_name ou last_name
+>>>>>>> cd918b60569df0b738d380615a21db7059da1204
         n'est pas une chaîne de caractères.
     """
 
