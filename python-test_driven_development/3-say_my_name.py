@@ -17,7 +17,6 @@ def say_my_name(first_name, last_name=""):
 
     Exceptions :
         TypeError: Si first_name ou last_name
->>>>>>> cd918b60569df0b738d380615a21db7059da1204
         n'est pas une chaîne de caractères.
     """
 
