@@ -2,10 +2,11 @@
 """ Utilise une propriété pour gérer l'attribut `size`
 et ses modifications """
 
+
 class Square:
     """ Classe représentant un carré avec une propriété
         et un setter pour size """
-    
+
     def __init__(self, size=0):
         self.size = size  # Utilisation du setter pour l'attribut size
 
