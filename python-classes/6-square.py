@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Ajoute un attribut `position` pour afficher le carré avec des espaces """
+""" Ajoute un attribut `position` pour afficher le carré avec des espaces."""
 
 
 class Square:

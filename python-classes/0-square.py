@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""" Créer une classe Square sans attributs ni méthodes """
+"""" Créer une classe Square sans attributs ni méthodes."""
 
 
 class Square:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Utilise une propriété pour gérer l'attribut `size`
-et ses modifications """
+et ses modifications."""
 
 
 class Square:

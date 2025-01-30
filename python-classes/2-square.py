@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Vérifie que `size` est un entier positif ou égal à zéro """
+""" Vérifie que `size` est un entier positif ou égal à zéro."""
 
 
 class Square:

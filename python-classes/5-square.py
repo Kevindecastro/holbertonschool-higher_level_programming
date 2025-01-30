@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Crée une méthode `my_print()` pour
-afficher un carré avec le caractère `#` """
+afficher un carré avec le caractère `#`."""
 
 
 class Square:

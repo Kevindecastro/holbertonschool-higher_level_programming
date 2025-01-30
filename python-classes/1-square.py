@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Ajoute un attribut privé `size` à la classe Square
-pour représenter la taille du carré """
+pour représenter la taille du carré."""
 
 
 class Square:

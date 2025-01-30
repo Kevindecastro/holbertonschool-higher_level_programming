@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Ajoute une méthode `area()` pour calculer l'aire du carré """
+""" Ajoute une méthode `area()` pour calculer l'aire du carré."""
 
 
 class Square:
