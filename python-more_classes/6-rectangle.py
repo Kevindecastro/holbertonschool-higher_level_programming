@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Définit une classe Rectangle avec un compteur d'instances."""
+"""Définit une classe Rectangle avec un compteur d'instances"""
 
 
 class Rectangle:
