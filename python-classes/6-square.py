@@ -30,10 +30,12 @@ class Square:
     @position.setter
     def position(self, value):
         """ Définit la position du carré avec validation """
-        if (len(value) != 2 or not all(isinstance(i, int) for i in value) or
-                value[0] < 0 or value[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value  # Si validé, on définit la position
+        if type(value) is tuple and len(value) == 2 and\
+            type(value[0]) is int and type(value[1]) is int and\
+                value[0] >= 0 and value[1] >= 0:
+                    self.__position = value  # Si validé, on définit la position
+        else:
+             raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
         """Affiche le carré avec le caractère #,
