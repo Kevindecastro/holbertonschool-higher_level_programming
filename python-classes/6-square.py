@@ -30,13 +30,10 @@ class Square:
     @position.setter
     def position(self, value):
         """ Définit la position du carré avec validation """
-        if (not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(num, int) for num in value) or
-            not all(num >= 0 for num in value)):
+        if (not type(value) is tuple or len(value) != 2 or
+                not all(type(i) is int and i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-
-        self.__position = value  # Si validé, on définit la position
+        self._position = value  # Si validé, on définit la position
 
     def area(self):
         """ Retourne l'aire du carré """
