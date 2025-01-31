@@ -6,7 +6,7 @@ class Rectangle:
     """Représente un rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initialise le rectangle avec une largeur et une hauteur."""
+        """Initialise le rectangle avec une largeur et une hauteur"""
         self.width = width
         self.height = height
 
