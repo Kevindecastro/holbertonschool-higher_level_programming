@@ -1,19 +1,14 @@
 #!/usr/bin/python3
-"""
-Module contenant la fonction lookup
-
-Cette fonction renvoie une liste des attributs et méthodes d'un objet donné
+"""Module to create class
+This module defines an empty class called list.
 """
 
 
 def lookup(obj):
-    """
-    Retourne la liste des attributs et méthodes d'un objet
+    """Empty class that defines a square.
 
-    Args:
-        obj (object): L'objet dont on veut connaître les attributs et méthodes
-
-    Returns:
-        list: La liste des attributs et méthodes de l'objet
+    This class doesn't currently have any properties, methods, or attributes.
+    It is essentially a placeholder for future development.
     """
+
     return dir(obj)
