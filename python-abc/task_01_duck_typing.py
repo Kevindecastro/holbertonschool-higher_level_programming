@@ -25,15 +25,15 @@ class Circle(Shape):
 
     def __init__(self, radius):
         """Initialise un cercle avec un rayon donné"""
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """Calcule et retourne l'aire du cercle"""
-        return math.pi * self.radius ** 2
+        return pi * (self.radius**2)
 
     def perimeter(self):
         """Calcule et retourne le périmètre du cercle"""
-        return 2 * math.pi * self.radius
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
@@ -55,5 +55,5 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """Affiche l'aire et le périmètre d'un objet Shape"""
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
