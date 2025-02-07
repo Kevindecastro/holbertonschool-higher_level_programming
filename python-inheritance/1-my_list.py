@@ -20,4 +20,7 @@ class MyList(list):
         La méthode ne modifie pas la liste originale, elle imprime simplement
         les éléments triés
         """
+        for item in self:
+            if not isinstance(item, int):
+                raise TypeError("not all elements in list are integer")
         print(sorted(self))
