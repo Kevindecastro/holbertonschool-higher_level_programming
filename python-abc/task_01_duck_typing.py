@@ -2,9 +2,6 @@
 """Module définissant une hiérarchie de formes géométriques
 avec des méthodes pour calculer l'aire et le périmètre"""
 
-from abc import ABC, abstractmethod
-import math
-
 
 class Shape(ABC):
     """Classe abstraite représentant une forme géométrique"""
