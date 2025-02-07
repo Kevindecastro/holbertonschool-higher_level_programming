@@ -55,7 +55,5 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """Affiche l'aire et le périmètre d'un objet Shape"""
-if not isinstance(shape, Shape):
-        raise TypeError("L'argument doit être une instance de Shape")
-print(f"Area: {shape.area()}")
-print(f"Perimeter: {shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
