@@ -3,7 +3,7 @@
 avec des méthodes pour calculer l'aire et le périmètre"""
 
 from abc import ABC, abstractmethod
-import math
+from math import pi
 
 
 class Shape(ABC):
