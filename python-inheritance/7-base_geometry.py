@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Module contenant la classe BaseGeometry
+"""
+
+
 class BaseGeometry:
     """
     La classe BaseGeometry représente une géométrie de base.
