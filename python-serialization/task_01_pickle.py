@@ -62,7 +62,7 @@ class CustomObject:
             None
         """
         try:
-            with open(filename, 'wb', encoding='utf-8') as f:
+            with open(filename, 'wb') as f:
                 pickle.dump(self, f)
         except Exception as e:
             print(f"Error serializing object: {e}")
@@ -81,8 +81,8 @@ class CustomObject:
             None: Si une erreur se produit pendant la désérialisation
         """
         try:
-            with open(filename, 'rb', encoding='utf-8') as f:
+            with open(filename, 'rb') as f:
                 return pickle.load(f)
         except Exception as e:
-            print(f"Error deserializing object: {e}")
-            return None
+             print(f"An error occurred while deserializing: {e}")
+             return None
