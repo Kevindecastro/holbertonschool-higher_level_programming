@@ -3,7 +3,7 @@
 Module pour la conversion de données CSV en JSON
 
 Ce module contient une fonction pour lire les données d'un fichier CSV et les
-convertir en format JSON
+convertir en format JSON.
 """
 
 import csv
