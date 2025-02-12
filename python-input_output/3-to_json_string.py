@@ -1,9 +1,7 @@
 #!/usr/bin/python3
+""" Module contenant une fonction pour
+    convertir un objet Python en chaîne JSON """
 import json
-
-"""
-Module contenant une fonction pour convertir un objet Python en chaîne JSON
-"""
 
 
 def to_json_string(my_obj):
