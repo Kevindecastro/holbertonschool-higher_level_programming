@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-
-import sys
-import json
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-
 """
 Ce module permet de charger une liste d'éléments à partir d'un fichier JSON,
 d'ajouter les éléments passés en ligne de commande et de sauvegarder la liste
 mise à jour dans le même fichier JSON. Si le fichier n'existe pas, il est
 créé.
 """
+import sys
+import json
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 def main():
