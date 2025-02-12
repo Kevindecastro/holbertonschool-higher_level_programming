@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import json
+""" Module contenant une fonction pour convertir
+    une chaîne JSON en objet Python """
 
-"""
-Module contenant une fonction pour convertir une chaîne JSON en objet Python
-"""
+import json
 
 
 def from_json_string(my_str):
