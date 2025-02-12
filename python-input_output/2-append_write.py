@@ -3,6 +3,7 @@
 Module contenant une fonction pour ajouter du texte à un fichier.
 """
 
+
 def append_write(filename="", text=""):
     """
     Ajoute une chaîne de caractères à la fin d'un fichier texte (UTF8)
