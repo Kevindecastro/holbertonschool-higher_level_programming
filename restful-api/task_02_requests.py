@@ -3,7 +3,7 @@ import csv
 
 def fetch_and_print_posts():
     """
-    Récupère et affiche les titres des posts depuis JSONPlaceholder.
+    Récupère et affiche les titres des posts depuis JSONPlaceholder
     """
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
@@ -19,7 +19,7 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """
-    Récupère les posts depuis JSONPlaceholder et les enregistre dans un fichier CSV.
+    Récupère les posts depuis JSONPlaceholder et les enregistre dans un fichier CSV
     """
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
