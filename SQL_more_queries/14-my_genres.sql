@@ -6,10 +6,10 @@ FROM tv_genres g
 JOIN tv_show_genres tsg ON g.id = tsg.genre_id
 
 -- Jointure avec la table `tv_shows` pour récupérer les informations des émissions
-JOIN tv_shows s ON tsg.tv_show_id = s.id
+JOIN tv_shows ts ON tsg.tv_show_id = ts.id
 
 -- Filtre pour ne récupérer que les genres de l'émission "Dexter"
-WHERE s.title = "Dexter"
+WHERE ts.title = "Dexter"
 
 -- Trie les genres par ordre alphabétique (croissant)
 ORDER BY g.name ASC;
