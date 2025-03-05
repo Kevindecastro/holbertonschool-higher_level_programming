@@ -18,9 +18,9 @@ Chaque fichier SQL contient une instruction ou un ensemble d'instructions corres
 | `1-create_database_if_missing.sql` | Crée une base de données si elle n'existe pas. |
 | `2-remove_database.sql` | Supprime une base de données si elle existe. |
 | `3-list_tables.sql` | Liste toutes les tables d'une base de données donnée. |
-| `4-first_table.sql` | Crée une table simple avec une clé primaire. |
+| `4-first_table.sql` | Crée une table simple si elle n'existe pas. |
 | `5-full_table.sql` | Affiche la structure de la table précédemment créée. |
-| `6-list_values.sql` | Insère des valeurs dans la table et les liste. |
+| `6-list_values.sql` | Affiche toutes les lignes de la table de la base de données. |
 | `7-insert_value.sql` | Ajoute une nouvelle valeur à la table. |
 | `8-count_89.sql` | Compte le nombre de lignes contenant une valeur spécifique. |
 | `9-full_creation.sql` | Crée une table avec des contraintes et insère des valeurs. |
@@ -46,4 +46,3 @@ mysql -h localhost -u root -p < 0-list_databases.sql
 ## Auteur
 
 Kevin De Castro : Étudiant à la Holberton School
-
