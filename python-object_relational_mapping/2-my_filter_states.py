@@ -5,25 +5,19 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Récupération des arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
+    db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
+    cur = db.cursor()
 
-    # Connexion à la base de données
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database, port=3306)
-    cursor = db.cursor()
-    
     # Exécution de la requête SQL avec format (vulnérable aux injections SQL)
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
-    cursor.execute(query)
+    cur.execute(
+        "SELECT * FROM states WHERE name = %s ORDER BY id ASC", (argv[4],)
+        )
 
     # Affichage des résultats
-    rows = cursor.fetchall()
+    rows = cur.fetchall()
     for row in rows:
         print(row)
 
     # Fermeture du curseur et de la connexion
-    cursor.close()
+    cur.close()
     db.close()
