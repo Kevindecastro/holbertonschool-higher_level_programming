@@ -8,15 +8,16 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
     cur = db.cursor()
 
-    # Exécution de la requête SQL avec format (vulnérable aux injections SQL)
+    # Exécution de la requête
     cur.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id ASC", (argv[4],)
-        )
+        """SELECT * FROM states WHERE name = %s ORDER BY id ASC"""
+        .format(argv[4]))
 
     # Affichage des résultats
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     # Fermeture du curseur et de la connexion
     cur.close()
