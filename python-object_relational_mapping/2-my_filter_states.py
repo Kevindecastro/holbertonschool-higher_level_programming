@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states where 'name' matches the user input from the database."""
+"""Lists all states where 'name' matches the user input from the database"""
 
 import MySQLdb
 import sys
