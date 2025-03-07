@@ -5,31 +5,25 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Connexion à la base de données MySQL avec les arguments fournis
-    db = MySQLdb.connect(
-        host="localhost",  # Hôte de la base de données
-        user=sys.argv[1],  # Nom d'utilisateur MySQL
-        passwd=sys.argv[2],  # Mot de passe MySQL
-        db=sys.argv[3],  # Nom de la base de données
-        port=3306  # Port MySQL par défaut
-    )
+    # Récupération des arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
 
-    # Création du curseur pour exécuter la requête
-    cur = db.cursor()
-
-    # Construction et exécution de la requête SQL
-    query = (
-        "SELECT * FROM states "
-        "WHERE name LIKE BINARY '{}' "
-        "ORDER BY states.id ASC"
-    ).format(sys.argv[4])  # Utilisation de format() pour insérer l'entrée utilisateur
-
-    cur.execute(query)
+    # Connexion à la base de données
+    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database, port=3306)
+    cursor = db.cursor()
+    
+    # Exécution de la requête SQL avec format (vulnérable aux injections SQL)
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    cursor.execute(query)
 
     # Affichage des résultats
-    for row in cur.fetchall():
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
 
-    # Fermeture du curseur et de la connexion à la base de données
-    cur.close()
+    # Fermeture du curseur et de la connexion
+    cursor.close()
     db.close()
