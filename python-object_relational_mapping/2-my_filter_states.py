@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     # Exécution de la requête
     cur.execute(
-        """SELECT * FROM states WHERE name = %s ORDER BY id ASC"""
+        """SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"""
         .format(argv[4]))
 
     # Affichage des résultats
