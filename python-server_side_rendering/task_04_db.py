@@ -1,64 +1,111 @@
-import sqlite3
 from flask import Flask, render_template, request
+import sqlite3
+import json
+import csv
+import os
 
-# Initialisation de l'application Flask
 app = Flask(__name__)
 
 
-def read_sqlite(product_id=None):
-    """
-    Lit et retourne les données depuis une base de données SQLite.
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-    Args:
-        product_id (str, optional): ID du produit à filtrer. Par défaut à None.
 
-    Returns:
-        list: Données lues depuis la base de données.
-    """
-    conn = sqlite3.connect('data/products.db')
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/items')
+def items():
+    try:
+        with open('items.json') as f:
+            data = json.load(f)
+        items = data.get('items', [])
+        return render_template('items.html', items=items)
+    except FileNotFoundError:
+        return "Items file not found", 404
+    except json.JSONDecodeError:
+        return "Error decoding JSON", 500
+
+
+def read_json(file_path):
+    with open(file_path, 'r') as file:
+        return json.load(file)
+
+
+def read_csv(file_path):
+    products = []
+    with open(file_path, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            row['id'] = int(row['id'])
+            row['price'] = float(row['price'])
+            products.append(row)
+    return products
+
+
+def fetch_data_from_sqlite():
+    conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
-    # Exécute la requête SQL en fonction de l'ID
-    if product_id:
-        cursor.execute('SELECT * FROM Products WHERE id = ?', (product_id,))
-    else:
-        cursor.execute('SELECT * FROM Products')
-    data = cursor.fetchall()
+    cursor.execute('SELECT * FROM Products')
+    rows = cursor.fetchall()
     conn.close()
-    # Convertit les données en liste de dictionnaires
-    return [dict(id=row[0], name=row[1], category=row[2], price=row[3])
-            for row in data]
+
+    products = []
+    for row in rows:
+        product = {
+            'id': row[0],
+            'name': row[1],
+            'category': row[2],
+            'price': row[3]
+        }
+        products.append(product)
+
+    print(products)
+    return products
 
 
 @app.route('/products')
 def products():
-    """
-    Route pour afficher les produits.
-    Lit les données depuis un fichier JSON, CSV ou une base de données SQLite.
-    Filtre les produits par 'id' si spécifié.
-    """
-    # Récupère les paramètres de la requête
     source = request.args.get('source')
     product_id = request.args.get('id')
+    file_path = ''
 
-    # Lit les données en fonction de la source
     if source == 'json':
-        data = read_json('data/products.json')
+        file_path = 'products.json'
     elif source == 'csv':
-        data = read_csv('data/products.csv')
+        file_path = 'products.csv'
     elif source == 'sql':
-        data = read_sqlite(product_id)
+        products = fetch_data_from_sqlite()
     else:
         return render_template('product_display.html', error="Wrong source")
 
-    # Filtre les données par 'id' si spécifié
-    if product_id and not data:
-        return render_template(
-            'product_display.html', error="Product not found")
+    if source != 'sql' and not os.path.exists(file_path):
+        return render_template('product_display.html', error="File not found")
 
-    # Rend le template avec les produits
-    return render_template('product_display.html', products=data)
+    if source == 'json':
+        products = read_json(file_path)
+    elif source == 'csv':
+        products = read_csv(file_path)
+
+    if product_id:
+        try:
+            product_id = int(product_id)
+            products = [p for p in products if p['id'] == product_id]
+            if not products:
+                return render_template('product_display.html', error="Product not found")
+        except ValueError:
+            return render_template('product_display.html', error="Invalid id")
+
+    return render_template('product_display.html', products=products)
 
 
 if __name__ == '__main__':
-    # Lance l'application Flask en mode debug sur le port 5000
     app.run(debug=True, port=5000)
