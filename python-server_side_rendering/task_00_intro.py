@@ -33,3 +33,6 @@ def generate_invitations(template, attendees):
             file.write(invitation)
 
         print(f"Generated: {output_filename}")
+
+
+
